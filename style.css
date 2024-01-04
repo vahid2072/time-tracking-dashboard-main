@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Light-red-work: hsl(15, 100%, 70%);
+  --Soft-blue: hsl(195, 74%, 62%);
+  --Light-red-study: hsl(348, 100%, 68%);
+  --Lime-green: hsl(145, 58%, 55%);
+  --Violet: hsl(264, 64%, 52%);
+  --Soft-orange: hsl(43, 84%, 65%);
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--Very-dark-blue);
+  color: white;
+}
+
+main {
+  width: 375px;
+  height: 200vh;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  border-radius: 8px;
+  background-color: var(--Dark-blue);
+  margin-bottom: 1.5rem;
+}
+.user .profile {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 25px 20px;
+  background-color: var(--Blue);
+}
+.user .profile .profile-pic {
+  background-image: url(./images/image-jeremy.png);
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--Pale-Blue);
+}
+.user .profile .user-report {
+  margin-left: 1rem;
+}
+.user .profile .user-report span {
+  color: var(--Pale-Blue);
+}
+.user .profile .user-report .user-name {
+  font-size: 28px;
+  font-weight: 300;
+}
+.user .time-tracking {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px 20px;
+  color: var(--Pale-Blue);
+}
+.user .time-tracking button {
+  background: none;
+  border: none;
+  color: var(--Pale-Blue);
+  cursor: pointer;
+}
+.user .time-tracking button:hover {
+  color: white;
+}
+.user .time-tracking button.active {
+  color: white;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
+.info .work-time {
+  grid-area: 1/1/2/2;
+}
+.info .play-time {
+  grid-area: 2/1/3/2;
+}
+.info .study-time {
+  grid-area: 3/1/4/2;
+}
+.info .exersice-time {
+  grid-area: 4/1/5/2;
+}
+.info .social-time {
+  grid-area: 5/1/6/2;
+}
+.info .selfcare-time {
+  grid-area: 6/1/7/2;
+}
+
+.work-time,
+.play-time,
+.study-time,
+.exersice-time,
+.social-time,
+.selfcare-time {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.work-time .bg-image,
+.play-time .bg-image,
+.study-time .bg-image,
+.exersice-time .bg-image,
+.social-time .bg-image,
+.selfcare-time .bg-image {
+  width: 100%;
+  height: 3rem;
+}
+.work-time .bg-image .icons,
+.play-time .bg-image .icons,
+.study-time .bg-image .icons,
+.exersice-time .bg-image .icons,
+.social-time .bg-image .icons,
+.selfcare-time .bg-image .icons {
+  top: -12px;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  left: 300px;
+}
+.work-time .work-info,
+.play-time .work-info,
+.study-time .work-info,
+.exersice-time .work-info,
+.social-time .work-info,
+.selfcare-time .work-info {
+  background-color: var(--Dark-blue);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.work-time .work-info:hover,
+.play-time .work-info:hover,
+.study-time .work-info:hover,
+.exersice-time .work-info:hover,
+.social-time .work-info:hover,
+.selfcare-time .work-info:hover {
+  background-color: var(--Desaturated-blue);
+}
+.work-time .work-info .title,
+.play-time .work-info .title,
+.study-time .work-info .title,
+.exersice-time .work-info .title,
+.social-time .work-info .title,
+.selfcare-time .work-info .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 25px 0 25px;
+}
+.work-time .work-info .title .fa-ellipsis,
+.play-time .work-info .title .fa-ellipsis,
+.study-time .work-info .title .fa-ellipsis,
+.exersice-time .work-info .title .fa-ellipsis,
+.social-time .work-info .title .fa-ellipsis,
+.selfcare-time .work-info .title .fa-ellipsis {
+  color: var(--Pale-Blue);
+  cursor: pointer;
+}
+.work-time .work-info .title .fa-ellipsis:hover,
+.play-time .work-info .title .fa-ellipsis:hover,
+.study-time .work-info .title .fa-ellipsis:hover,
+.exersice-time .work-info .title .fa-ellipsis:hover,
+.social-time .work-info .title .fa-ellipsis:hover,
+.selfcare-time .work-info .title .fa-ellipsis:hover {
+  color: white;
+}
+.work-time .work-info .allotted-time,
+.play-time .work-info .allotted-time,
+.study-time .work-info .allotted-time,
+.exersice-time .work-info .allotted-time,
+.social-time .work-info .allotted-time,
+.selfcare-time .work-info .allotted-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px 20px 25px;
+  padding: 20px;
+}
+.work-time .work-info .allotted-time h2,
+.play-time .work-info .allotted-time h2,
+.study-time .work-info .allotted-time h2,
+.exersice-time .work-info .allotted-time h2,
+.social-time .work-info .allotted-time h2,
+.selfcare-time .work-info .allotted-time h2 {
+  font-weight: 300;
+}
+.work-time .work-info .allotted-time p,
+.play-time .work-info .allotted-time p,
+.study-time .work-info .allotted-time p,
+.exersice-time .work-info .allotted-time p,
+.social-time .work-info .allotted-time p,
+.selfcare-time .work-info .allotted-time p {
+  color: var(--Pale-Blue);
+}
+
+.work-time {
+  background-color: var(--Light-red-work);
+}
+
+.play-time {
+  background-color: var(--Soft-blue);
+}
+
+.study-time {
+  background-color: var(--Light-red-study);
+}
+
+.exersice-time {
+  background-color: var(--Lime-green);
+}
+
+.social-time {
+  background-color: var(--Violet);
+}
+
+.selfcare-time {
+  background-color: var(--Soft-orange);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  main {
+    flex-direction: row;
+    width: 100%;
+    transform: translate(20%, 20%);
+    height: 100vh;
+  }
+  main .user {
+    margin-bottom: 2rem;
+    width: 15%;
+    height: 420px;
+  }
+  main .user .profile {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 10px;
+  }
+  main .user .profile .user-report {
+    margin-top: 1rem;
+  }
+  main .user .profile .user-report .user-name {
+    font-size: 32px;
+  }
+  main .user .time-tracking {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  main .user .time-tracking button {
+    margin: 10px;
+  }
+  main .info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    margin-left: 25px;
+    height: 200px;
+  }
+  main .info .work-time {
+    grid-area: 1/1/2/2;
+  }
+  main .info .play-time {
+    grid-area: 2/1/3/2;
+  }
+  main .info .study-time {
+    grid-area: 1/2/2/3;
+  }
+  main .info .exersice-time {
+    grid-area: 2/2/3/3;
+  }
+  main .info .social-time {
+    grid-area: 1/3/2/4;
+  }
+  main .info .selfcare-time {
+    grid-area: 2/3/3/4;
+  }
+  main .work-time,
+  main .play-time,
+  main .study-time,
+  main .exersice-time,
+  main .social-time,
+  main .selfcare-time {
+    height: 200px;
+  }
+  main .work-time .bg-image .icons,
+  main .play-time .bg-image .icons,
+  main .study-time .bg-image .icons,
+  main .exersice-time .bg-image .icons,
+  main .social-time .bg-image .icons,
+  main .selfcare-time .bg-image .icons {
+    left: 120px;
+  }
+  main .work-time .work-info,
+  main .play-time .work-info,
+  main .study-time .work-info,
+  main .exersice-time .work-info,
+  main .social-time .work-info,
+  main .selfcare-time .work-info {
+    width: 200px;
+    height: 100%;
+  }
+  main .work-time .work-info:hover,
+  main .play-time .work-info:hover,
+  main .study-time .work-info:hover,
+  main .exersice-time .work-info:hover,
+  main .social-time .work-info:hover,
+  main .selfcare-time .work-info:hover {
+    background-color: var(--Desaturated-blue);
+  }
+  main .work-time .work-info .allotted-time,
+  main .play-time .work-info .allotted-time,
+  main .study-time .work-info .allotted-time,
+  main .exersice-time .work-info .allotted-time,
+  main .social-time .work-info .allotted-time,
+  main .selfcare-time .work-info .allotted-time {
+    flex-direction: column;
+  }
+  main .work-time .work-info .allotted-time h2,
+  main .play-time .work-info .allotted-time h2,
+  main .study-time .work-info .allotted-time h2,
+  main .exersice-time .work-info .allotted-time h2,
+  main .social-time .work-info .allotted-time h2,
+  main .selfcare-time .work-info .allotted-time h2 {
+    font-weight: 300;
+    font-size: 38px;
+  }
+  main .work-time .work-info .allotted-time p,
+  main .play-time .work-info .allotted-time p,
+  main .study-time .work-info .allotted-time p,
+  main .exersice-time .work-info .allotted-time p,
+  main .social-time .work-info .allotted-time p,
+  main .selfcare-time .work-info .allotted-time p {
+    font-size: 12px;
+    color: var(--Pale-Blue);
+  }
+}/*# sourceMappingURL=style.css.map */
